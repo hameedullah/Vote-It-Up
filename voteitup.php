@@ -130,7 +130,7 @@ MostVotedAllTime_Widget(); //Use default bar
 
 //Display the votes as a bar
 function DisplayVotes($postID, $type = '') {
-global $user_ID, $guest_votes, $vote_text, $use_votetext, $allow_sinks, $voteiu_skin;
+global $user_ID, $guest_votes, $vote_text, $use_votetext, $allow_sinks, $voteiu_skin, $user_login;
 
 $voteiu_skin = get_option('voteiu_skin');
 $votes = GetVotes($postID);
@@ -149,7 +149,7 @@ case 'bar':
 ?>
 <span class="barcontainer"><span class="barfill" id="votecount<?php echo $postID ?>" style="width:<?php echo round($barvotes[0] * 2.5); ?>%;">&nbsp;</span></span>
 <?php if ($user_ID != '') { 
- if (!($user_login == get_the_author_login() && !get_option('voteiu_allowownvote'))) { ?>
+ if (!($user_login == get_the_author_meta('login') && !get_option('voteiu_allowownvote'))) { ?>
 	<span>
 	<?php if(!UserVoted($postID,$user_ID)) { ?><span class="bartext" id="voteid<?php the_ID(); ?>">
 			<a href="javascript:vote('votecount<?php the_ID(); ?>','voteid<?php the_ID(); ?>','<?php echo get_option('voteiu_aftervotetext'); ?>',<?php the_ID(); ?>,<?php echo $user_ID; ?>,'<?php echo VoteItUp_ExtPath(); ?>');"><?php echo get_option('voteiu_votetext'); ?></a><?php if (get_option('voteiu_sinktext') != '') { ?><a href="javascript:sink('votecount<?php the_ID(); ?>','voteid<?php the_ID(); ?>','<?php echo get_option('voteiu_aftervotetext'); ?>',<?php the_ID(); ?>,<?php echo $user_ID; ?>,'<?php echo VoteItUp_ExtPath(); ?>');"><?php echo get_option('voteiu_sinktext'); ?></a>
