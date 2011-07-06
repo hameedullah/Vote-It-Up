@@ -228,7 +228,7 @@ break;
 /* Widget examples can be found in widget.php of wp-includes.*/
 function widget_MostVotedAllTime_init() {
 
-if (function_exists('register_sidebar_widget')) {
+if (function_exists('wp_register_sidebar_widget')) {
 function widget_MostVotedAllTime($args) {
 $options = get_option("widget_MostVotedAllTime");
 if ($options['title'] != '') {
@@ -246,7 +246,7 @@ $title = 'Most Voted Posts';
         <?php echo $after_widget; ?>
 <?php
 }
-register_sidebar_widget('Most Voted Posts', 'widget_MostVotedAllTime');
+wp_register_sidebar_widget(sanitize_title('Most Voted Posts'), 'Most Voted Posts', 'widget_MostVotedAllTime');
 //$widget_ops = array('classname' => 'widget_MostVotedAllTime', 'description' => __( "Displays the most voted up posts") );
 //@wp_register_sidebar_widget('widget_MostVotedAllTime', __('Most Voted Posts'), 'widget_MostVotedAllTime', $widget_ops);
 
@@ -271,7 +271,7 @@ $title = attribute_escape($options['title']);
 <?php
 }
 
-register_widget_control('Most Voted Posts', 'widget_MostVotedAllTime_Control', 0, 0 );
+wp_register_widget_control(sanitize_title('Most Voted Posts'), 'Most Voted Posts', 'widget_MostVotedAllTime_Control', 0, 0 );
 
 }
 }
