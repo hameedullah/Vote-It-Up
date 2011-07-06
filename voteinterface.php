@@ -19,9 +19,9 @@ if ($_GET['pid'] != '') {
 			}
 		}
 	} 
-	if ($_GET['tid'] == 'total') {
+	if (isset( $_GET['tid'] ) && $_GET['tid'] == 'total') {
 		echo GetVotes($_GET['pid'], false);
-	} else if ($_GET['tid'] == 'percent') {
+	} else if (isset( $_GET['tid'] ) && $_GET['tid'] == 'percent') {
 		//run the math as a percentage not total
 		echo GetVotes($_GET['pid'], true);
 	} else {
