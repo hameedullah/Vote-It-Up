@@ -15,19 +15,20 @@ $voteiu_limit = 100;
 $voteiu_widgetcount = 10;
 $voteiu_skin = '';
 $voteiu_initialoffset = 0;
+$voteiu_dbversion = $voteitup_dbversion;
 
 //Begins adding options if not available
 //3rd parameter is deprecated, but added for compatibility
-add_option('voteiu_votetext', $voteiu_votetext, 'The vote text');
-add_option('voteiu_sinktext', $voteiu_sinktext, 'The sink text');
-add_option('voteiu_aftervotetext', $voteiu_aftervotetext, 'The after vote text');
-add_option('voteiu_allowguests', $voteiu_allowguests, 'Allows guests to vote');
-add_option('voteiu_allowownvote', $voteiu_allowownvote, 'Allows authors to vote own posts');
-add_option('voteiu_limit', $voteiu_limit, 'The number of latest posts to include in the widget');
-add_option('voteiu_widgetcount', $voteiu_widgetcount, 'The number of posts shown in the widget');
-add_option('voteiu_skin', $voteiu_skin, 'The current theme for vote widget');
-add_option('voteiu_dbversion', $voteiu_dbversion, 'Vote It Up db version');
-add_option('voteiu_initialoffset', $voteiu_initialoffset, 'Vote offset');
+add_option('voteiu_votetext', $voteiu_votetext);
+add_option('voteiu_sinktext', $voteiu_sinktext);
+add_option('voteiu_aftervotetext', $voteiu_aftervotetext);
+add_option('voteiu_allowguests', $voteiu_allowguests);
+add_option('voteiu_allowownvote', $voteiu_allowownvote);
+add_option('voteiu_limit', $voteiu_limit);
+add_option('voteiu_widgetcount', $voteiu_widgetcount);
+add_option('voteiu_skin', $voteiu_skin);
+add_option('voteiu_dbversion', $voteiu_dbversion);
+add_option('voteiu_initialoffset', $voteiu_initialoffset);
 
 //Change setting to default values if user left these fields blank
 if (get_option('voteiu_initialoffset') == '') {
