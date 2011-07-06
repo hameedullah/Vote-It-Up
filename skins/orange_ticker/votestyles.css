@@ -1,0 +1,113 @@
+.post_votewidget {
+	width: 45px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	background-image:url(img/votebackground.png);
+	background-repeat:no-repeat;
+}
+.post_votewidget_closed {
+	width: 45px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	background-image:url(img/votebackground2.png);
+	background-repeat:no-repeat;
+}
+.post_votecount {
+	width: 45px;
+	height: 30px;
+	padding: 8px 0px 0px 0px;
+	font-size: 18px;
+	color: #7F7F7F;
+	text-align: center;
+	display: block;
+	margin: 0px;
+}
+.post_votebuttoncontainer a {
+
+}
+.post_postvote div {
+
+}
+.post_votebutton {
+	font-size: 10px; /*10*/
+	background-image:url(img/votebutton.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	text-align: center;
+	color: #7F7F7F;
+	height: 15px;
+	width: 45px;
+	margin: 0px;
+	/*margin-top: -5px;*/
+	padding: 0px;
+	/*padding-bottom: 5px;*/
+	display: block;
+	text-decoration: none;
+	/*border: 1px solid #000000;*/
+	line-height: 1em; /*Fixes issues on certain themes*/
+}.post_votebutton a {
+	color: #7F7F7F;
+}
+.post_votebutton:hover {
+	color: #999999;
+	text-decoration: none;
+}
+.post_postvote {
+	width: 50px;
+	float: left;
+}
+.votewidget {
+	border: 1px solid #DDDDDD;
+	width: 90%;
+	display: block;
+	background-color: #000000;
+	margin: 5px auto 5px auto;
+}
+.votewidget .fore {
+	background-color: #FFFFFF;
+	width: 100%;
+	display: block;
+}
+.votewidget .back {
+	background-color: #EEEEEE;
+	width: 100%;
+	display: block;
+}
+.votewidget .votecount {
+	width: 23%;
+	padding-left: 2%;
+	float: left;
+}
+.votewidget .text {
+	width: 75%;
+	float: left;
+}
+.votewidget .title {
+	background-color: #FFFFFF;
+	width: 98%;
+	display: block;
+	padding-left: 2%;
+	font-weight: bold;
+	color: #666666;
+}
+.votemicro {
+	border: 1px solid #FFE07D;
+	background-color: #FFF2C9;
+	color: #7F7F7F;
+	font-size: 0.55em; /*8*/
+	/*
+	width: 20px;
+	height: 10px;*/
+	text-align: center;
+	padding: 1px 3px 1px 3px;
+	margin: 0px 5px 0px 0px;
+	vertical-align: middle;
+	display: inline;
+	float: left;
+}
+.votemicrotext {
+	font-size: 1em; /* 12 */
+	vertical-align: middle;
+}

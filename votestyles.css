@@ -1,0 +1,136 @@
+/* This section is used when you are displaying votes as a bar */
+.barcontainer {
+	border: 1px solid #999999;
+	height: 5px;
+	width: 40px;
+	font-size: 1px;
+	margin: 2px 2px;
+	display: block;
+}
+.barfill {
+	background-color: #0099CC;
+	font-size: 1px;
+	height: 5px;
+	clear: both;
+	display: block;
+}
+.barhotfill {
+	background-color: #00CCFF;
+	font-size: 1px;
+	height: 5px;
+	clear: both;
+	display: block;
+}
+.bartext {
+	width: 40px;
+	padding: 0px 0px;
+	text-align: center;
+	display: block;
+	color: #999999;
+	margin: 0px 3px;
+}
+.bartext a {
+	color: #0099CC;
+}
+.bartext .votedown {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+	float: left;
+}
+.bartext .voteup {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+}
+/* This section is used when you are displaying votes as a ticker */
+.tickercontainer {
+	border: 2px solid #E5E5E5;
+	background-color: #F3F3F3;
+	height: 18px;
+	width: 40px;
+	font-size: 18px;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 0px 2px;
+	display: block;
+	color: #999999;
+	cursor: default;
+}
+.tickertext .imagecontainer {
+	border-bottom: 2px solid #E5E5E5;
+	border-left: 2px solid #E5E5E5;
+	border-right: 2px solid #E5E5E5;
+	border-top: 0px;
+	background-color: #F3F3F3;
+	font-size: 12px;
+	margin: 0px 2px;
+	height: 20px;
+	width: 40px;
+	padding: 0px 0px;
+	text-align: center;
+	display: block;
+	color: #0099CC;
+	text-decoration: none;
+}
+.tickertext .imagecontainer .votedown {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+	float: left;
+}
+.tickertext .imagecontainer .voteup {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+}
+.tickertext .votelink {
+	border-bottom: 2px solid #E5E5E5;
+	border-left: 2px solid #E5E5E5;
+	border-right: 2px solid #E5E5E5;
+	border-top: 0px;
+	background-color: #F3F3F3;
+	font-size: 12px;
+	margin: 0px 2px;
+	height: 20px;
+	width: 40px;
+	padding: 0px 0px;
+	text-align: center;
+	display: block;
+	color: #0099CC;
+	text-decoration: none;
+}
+.votewidget {
+	border: 1px solid #DDDDDD;
+	width: 90%;
+	display: block;
+	background-color: #000000;
+	margin: 5px auto 5px auto;
+}
+.votewidget .fore {
+	background-color: #FFFFFF;
+	width: 100%;
+	display: block;
+}
+.votewidget .back {
+	background-color: #EEEEEE;
+	width: 100%;
+	display: block;
+}
+.votewidget .votecount {
+	width: 23%;
+	padding-left: 2%;
+	float: left;
+}
+.votewidget .text {
+	width: 75%;
+	float: left;
+}
+.votewidget .title {
+	background-color: #FFFFFF;
+	width: 98%;
+	display: block;
+	padding-left: 2%;
+	font-weight: bold;
+	color: #666666;
+}

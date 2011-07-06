@@ -1,0 +1,133 @@
+/* This section is used when you are displaying votes as a ticker */
+
+.tickercontainer {
+	border: 1px solid #E5E5E5;
+	background-color: #F3F3F3;
+	height: 18px;
+	width: 60px;
+	font-size: 1.0em;
+	font-weight: bold;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 0px 2px;
+	display: block;
+	color: #666666;
+	cursor: default;
+	white-space: no-wrap;
+}
+.tickertext .imagecontainer {
+	border-bottom: 1px solid #E5E5E5;
+	border-left: 1px solid #E5E5E5;
+	border-right: 1px solid #E5E5E5;
+	border-top: 0px;
+	background-color: #F3F3F3;
+	font-size: 1em;
+	margin: 0px 2px;
+	height: 18px;
+	width: 60px;
+	padding: 0px 0px;
+	text-align: center;
+	display: block;
+	color: #0099CC;
+	text-decoration: none;
+	white-space: no-wrap;
+}
+
+a.voteuplink {
+	color: #000099;
+	font-weight: normal;
+}
+
+a.votedownlink {
+	color: #990000;
+	font-weight: normal;
+}
+
+.tickertext .imagecontainer .votedown {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+	float: left;
+}
+.tickertext .imagecontainer .voteup {
+	padding: 2px;
+	width: 16px;
+	height:16px;
+}
+.tickertext .votelink {
+	border-bottom: 1px solid #E5E5E5;
+	border-left: 1px solid #E5E5E5;
+	border-right: 1px solid #E5E5E5;
+	border-top: 0px;
+	background-color: #F3F3F3;
+	font-size: 10px;
+	margin: 0px 2px;
+	height: 18px;
+	width: 60px;
+	padding: 0px 0px;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	white-space: no-wrap;
+}
+.tickertext .votelink a {
+	text-decoration: none;
+}
+.tickertext .votelink a:hover {
+	text-decoration: none;
+}
+.votewidget {
+	border: 1px solid #DDDDDD;
+	width: 90%;
+	display: block;
+	background-color: #000000;
+	margin: 5px auto 5px auto;
+}
+.votewidget .fore {
+	background-color: #FFFFFF;
+	width: 100%;
+	display: block;
+}
+.votewidget .back {
+	background-color: #EEEEEE;
+	width: 100%;
+	display: block;
+}
+.votewidget .votecount {
+	width: 23%;
+	padding-left: 2%;
+	float: left;
+}
+.votewidget .text {
+	width: 75%;
+	float: left;
+}
+.votewidget .title {
+	background-color: #FFFFFF;
+	width: 98%;
+	display: block;
+	padding-left: 2%;
+	font-weight: bold;
+	color: #666666;
+}
+/* Top posts widget */
+.votemicro {
+	border: 1px solid #FFE07D;
+	background-color: #FFF2C9;
+	color: #7F7F7F;
+	font-size: 0.55em; /*8*/
+	/*
+	width: 20px;
+	height: 10px;*/
+	text-align: center;
+	padding: 1px 3px 1px 3px;
+	margin: 0px 5px 0px 0px;
+	vertical-align: middle;
+	display: inline;
+	float: left;
+}
+.votemicrotext {
+	font-size: 1em; /* 12 */
+	vertical-align: middle;
+}
+
