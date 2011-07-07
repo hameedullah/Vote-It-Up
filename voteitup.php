@@ -261,7 +261,7 @@ if ( $options != $newoptions ) {
 		$options = $newoptions;
 		update_option('widget_MostVotedAllTime', $options);
 }
-$title = attribute_escape($options['title']);
+$title = esc_attr($options['title']);
 ?>
 <p>
     <label for="widget_MostVotedAllTime_title">Title: </label>
