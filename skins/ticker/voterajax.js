@@ -1,9 +1,11 @@
 /* Adapted from VoteItUp */
-/* A general script for updating the contents of the vote widget on the fly */
+/* A script for updating the contents of the vote widget on the fly */
 /*
 USAGE:
 vote (object to update with vote count, object to update with after vote text, post id, user id, base url)
 */
+
+/* Note: This script is meant for the bar theme of the plugin */
 
 var xmlHttp
 var currentobj
@@ -64,12 +66,14 @@ if (xmlHttp.readyState==4)
 	var voteno = xmlHttp.responseText;
 	
 	currentobj_obj = document.getElementById(currentobj);
-	voteobj_obj = document.getElementById(voteobj);
-	currentobj_obj.innerHTML = voteno;
-	voteobj_obj.innerHTML = aftervotetext;
-	if (aftervotetext == '') {
-	voteobj_obj.style.display = 'none';
-	}
+
+	currentobj_obj.style.width = voteno;
+
+        if ( voteobj !== null )  {
+	    voteobj_obj = document.getElementById(voteobj);
+	    voteobj_obj.innerHTML = aftervotetext;
+        }
+
 
 }
 
@@ -81,7 +85,7 @@ function vote(obj, votelinkobj, aftervote, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = votelinkobj;
 	aftervotetext = aftervote;
-	var scripturl = baseURL+"/voteinterface.php?type=vote&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=vote&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
 
@@ -89,6 +93,25 @@ function sink(obj, votelinkobj, aftervote, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = votelinkobj;
 	aftervotetext = aftervote;
-	var scripturl = baseURL+"/voteinterface.php?type=sink&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	lg_AJAXrequest(scripturl);
+}
+
+// Arghhh!!! missing vote_ticker function
+// I am just copying and posting vote and sink functions to create vote_ticker and sink_ticker
+// dont have nerves to create my own function in this mess. sorry
+function vote_ticker(obj, postID ,userID, baseURL) {
+	currentobj = obj;
+	voteobj = null; // ahh!!! global javascript vars
+	aftervotetext = null; // ahh!!! global javascript vars
+	var scripturl = baseURL+"/voteinterface.php?type=vote&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	lg_AJAXrequest(scripturl);
+}
+
+function sink_ticker(obj,  postID ,userID, baseURL) {
+	currentobj = obj;
+	voteobj = null; // ahh!! global javascript vars
+	aftervotetext = null; // ahh!! global javascript vars
+	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }

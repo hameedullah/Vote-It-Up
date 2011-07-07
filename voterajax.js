@@ -66,11 +66,14 @@ if (xmlHttp.readyState==4)
 	var voteno = xmlHttp.responseText;
 	
 	currentobj_obj = document.getElementById(currentobj);
-	voteobj_obj = document.getElementById(voteobj);
 
 	currentobj_obj.style.width = voteno;
 
-	voteobj_obj.innerHTML = aftervotetext;
+        if ( voteobj !== null )  {
+	    voteobj_obj = document.getElementById(voteobj);
+	    voteobj_obj.innerHTML = aftervotetext;
+        }
+
 
 }
 
@@ -90,6 +93,25 @@ function sink(obj, votelinkobj, aftervote, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = votelinkobj;
 	aftervotetext = aftervote;
+	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	lg_AJAXrequest(scripturl);
+}
+
+// Arghhh!!! missing vote_ticker function
+// I am just copying and posting vote and sink functions to create vote_ticker and sink_ticker
+// dont have nerves to create my own function in this mess. sorry
+function vote_ticker(obj, postID ,userID, baseURL) {
+	currentobj = obj;
+	voteobj = null; // ahh!!! global javascript vars
+	aftervotetext = null; // ahh!!! global javascript vars
+	var scripturl = baseURL+"/voteinterface.php?type=vote&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	lg_AJAXrequest(scripturl);
+}
+
+function sink_ticker(obj,  postID ,userID, baseURL) {
+	currentobj = obj;
+	voteobj = null; // ahh!! global javascript vars
+	aftervotetext = null; // ahh!! global javascript vars
 	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
