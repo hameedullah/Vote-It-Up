@@ -709,7 +709,7 @@ function MostVotedAllTime_SidebarWidget() {
 //Now does not include deleted posts
 $i = 0;
 while ($rows < get_option('voteiu_widgetcount')) {
-	if ($a[0][$i][0] != '') {
+	if (isset( $a[0][$i] ) && $a[0][$i][0] != '') {
 			$postdat = get_post($a[0][$i][0]);
 		if (!empty($postdat)) {
 			$rows++;
