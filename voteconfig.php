@@ -3,8 +3,8 @@
 
 function VoteItUp_options() {
 	if (function_exists('add_options_page')) {
-	add_options_page("Vote It Up", "Vote It Up", 8, "voteitupconfig", "VoteItUp_optionspage");
-	add_options_page("Edit Votes", "Edit Votes", 8, "voteitupeditvotes", "VoteItUp_editvotespage");
+	add_options_page("Vote It Up", "Vote It Up", 'manage_options', "voteitupconfig", "VoteItUp_optionspage");
+	add_options_page("Edit Votes", "Edit Votes", 'manage_options', "voteitupeditvotes", "VoteItUp_editvotespage");
 	}
 }
 
