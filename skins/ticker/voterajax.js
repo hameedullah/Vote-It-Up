@@ -67,7 +67,7 @@ if (xmlHttp.readyState==4)
 	
 	currentobj_obj = document.getElementById(currentobj);
 
-	currentobj_obj.style.width = voteno;
+	currentobj_obj.innerHTML = voteno;
 
         if ( voteobj !== null )  {
 	    voteobj_obj = document.getElementById(voteobj);
@@ -85,7 +85,7 @@ function vote(obj, votelinkobj, aftervote, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = votelinkobj;
 	aftervotetext = aftervote;
-	var scripturl = baseURL+"/voteinterface.php?type=vote&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=vote&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
 
@@ -93,7 +93,7 @@ function sink(obj, votelinkobj, aftervote, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = votelinkobj;
 	aftervotetext = aftervote;
-	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=sink&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
 
@@ -104,7 +104,7 @@ function vote_ticker(obj, postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = null; // ahh!!! global javascript vars
 	aftervotetext = null; // ahh!!! global javascript vars
-	var scripturl = baseURL+"/voteinterface.php?type=vote&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=vote&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
 
@@ -112,6 +112,6 @@ function sink_ticker(obj,  postID ,userID, baseURL) {
 	currentobj = obj;
 	voteobj = null; // ahh!! global javascript vars
 	aftervotetext = null; // ahh!! global javascript vars
-	var scripturl = baseURL+"/voteinterface.php?type=sink&uid="+userID+"&pid="+postID+"&auth="+Math.random();
+	var scripturl = baseURL+"/voteinterface.php?type=sink&tid=total&uid="+userID+"&pid="+postID+"&auth="+Math.random();
 	lg_AJAXrequest(scripturl);
 }
