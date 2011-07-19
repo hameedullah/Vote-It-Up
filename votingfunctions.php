@@ -296,6 +296,9 @@ function Vote($post_ID, $user_ID, $type) {
 		$wpdb->query("UPDATE ".$wpdb->prefix."votes_users SET votes='".$uservotes_result_sql."' WHERE user='".$u_ID."'");
 		$wpdb->query("UPDATE ".$wpdb->prefix."votes_users SET sinks='".$usersinks_result_sql."' WHERE user='".$u_ID."'");
 		
+		// can't fix much in this crap, so just adding GetVote as a quick hack to add the vote count to post meta
+		update_post_meta( $post_ID, 'votes', GetVotes( $post_ID ) );
+
 		$result = 'true';
 	} else {
 		//The user voted, thus the script will not update the votes in the article
