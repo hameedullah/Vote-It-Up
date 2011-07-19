@@ -234,6 +234,9 @@ function CheckKey($key, $id) {
 //Saves the vote of a user to the database
 function Vote($post_ID, $user_ID, $type) {
 	global $wpdb;
+
+	// this shit has prevent sql injection but not the login check. :@ and 49.721 sites use this crap?
+	if ( ! current_user_can( 'read_post' ) ) return false;
 	
 	//Prevents SQL injection
 	$p_ID = $wpdb->escape($post_ID);
