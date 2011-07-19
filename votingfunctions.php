@@ -236,7 +236,7 @@ function Vote($post_ID, $user_ID, $type) {
 	global $wpdb;
 
 	// this shit has prevent sql injection but not the login check. :@ and 49.721 sites use this crap?
-	if ( ! current_user_can( 'read_post' ) ) return false;
+	if ( ! current_user_can( 'read' ) ) return false;
 	
 	//Prevents SQL injection
 	$p_ID = $wpdb->escape($post_ID);
@@ -297,12 +297,15 @@ function Vote($post_ID, $user_ID, $type) {
 		$wpdb->query("UPDATE ".$wpdb->prefix."votes_users SET sinks='".$usersinks_result_sql."' WHERE user='".$u_ID."'");
 		
 		// can't fix much in this crap, so just adding GetVote as a quick hack to add the vote count to post meta
-		update_post_meta( $post_ID, 'votes', GetVotes( $post_ID ) );
+		$result = GetVotes( $post_ID );
+		update_post_meta( $post_ID, 'votes', $result );
 
-		$result = 'true';
 	} else {
 		//The user voted, thus the script will not update the votes in the article
-		$result = 'false';
+		//$result = 'false';
+		// wtf? 'false'?
+		// return votes count :)
+		$result = GetVotes( $post_ID );
 	}
 
 	return $result; //returns '' on failure, returns 'true' if votes were casted, returns 'false' if user already casted a vote
